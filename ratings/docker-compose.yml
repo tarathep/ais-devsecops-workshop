@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  ratings:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SERVICE_VERSION: v2
+      MONGO_DB_URL: mongodb://db:27017
+      MONGO_DB_NAME: ratings
+  db:
+    image: bitnami/mongodb:4.2.10-debian-10-r26
+    volumes:
+      - "./databases:/docker-entrypoint-initdb.d"
+    ports:
+      - "27017:27017"

@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingress.annotations.kubernetes_io_ingress_class }}
+    nginx.ingress.kubernetes.io/rewrite-target: {{ .Values.ingress.annotations.nginx_ingress_kubernetes_io_rewrite_target }}
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http: 
+      paths:
+      - backend:
+          serviceName: {{ .Release.Name }}
+          servicePort: {{ .Values.ratings.port }}
+        path: {{ .Values.ingress.path }}

@@ -1,0 +1,64 @@
+def scmVars
+
+pipeline {
+  agent {
+    kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: helm
+    image: lachlanevenson/k8s-helm:v3.3.4
+    command:
+    - cat
+    tty: true
+"""
+    }
+  }
+
+  // Git Parameter Choices
+  parameters {
+    gitParameter name: 'TAG',
+                 selectedValue: 'TOP',
+                 sortMode: 'DESCENDING_SMART',
+                 tagFilter: 'build-*',
+                 type: 'PT_TAG'
+  }
+
+  stages {
+
+    // ***** Stage Clone *****
+    stage('Clone ratings source code') {
+      steps {
+        script {
+          scmVars = checkout([
+            $class: 'GitSCM',
+            branches: [[name: "refs/tags/${params.TAG}"]],
+            userRemoteConfigs: [[
+              credentialsId: 'training10-bookinfo-git-deploy-key',
+              url: 'git@git.demo.opsta.co.th:adb/training10/ratings.git'
+            ]]
+          ])
+        }
+      }
+    }
+
+    // ***** Stage Deploy *****
+    stage('Deploy ratings with Helm Chart') {
+      steps {
+        container('helm') {
+          script {
+            withKubeConfig([credentialsId: 'gce-k8s-kubeconfig']) {
+              // Helm upgrade with set production tag
+              sh "helm upgrade -f k8s/helm-values/values-bookinfo-prd-ratings.yaml --wait \
+                --set extraEnv.COMMIT_ID=${scmVars.GIT_COMMIT} \
+                --set ratings.tag=${params.TAG} \
+                --namespace training10-bookinfo-prd bookinfo-prd-ratings k8s/helm"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+details:
+  namespace: training10-bookinfo-uat
+  image: registry.demo.opsta.co.th/training10/bookinfo/details
+  tag: uat
+  replicas: 1
+  imagePullSecrets: registry-bookinfo
+  port: 8080
+  healthCheckPath: "/health"
+ingress:
+  annotations:
+    kubernetes_io_ingress_class: nginx
+    nginx_ingress_kubernetes_io_rewrite_target: /$2
+  host: bookinfo.uat.opsta.co.th
+  path: "/training10/details(/|$)(.*)"
+  serviceType: ClusterIP
+extraEnv:
+  COMMIT_ID: CHANGEME
+  SERVICE_VERSION: v2
+  MONGO_DB_URL: mongodb://bookinfo-uat-details-mongodb:27017/details

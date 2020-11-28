@@ -1,0 +1,8 @@
+image:
+  tag: 4.4.2-debian-10-r0
+auth:
+  enabled: false
+persistence:
+  enabled: false
+initdbScriptsConfigMap: bookinfo-prd-ratings-mongodb-initdb
+

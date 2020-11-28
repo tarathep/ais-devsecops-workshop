@@ -1,0 +1,524 @@
+    1  kubectl get deploy
+    2  kubectl get deploy -o wide
+    3  clear
+    4  kubectl get deploy -o wide
+    5  kubectl describe bookinfo-prd-ratings
+    6  kubectl get po
+    7  kubectl desc bookinfo-prd-ratings-6bc6b46685-t9vkl
+    8  kubectl describe bookinfo-prd-ratings-6bc6b46685-t9vkl
+    9  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json  
+   10  kubectl get po
+   11  clear
+   12  kubectl get po
+   13  clear
+   14  kubectl get po
+   15  clear
+   16  images
+   17  docker images
+   18  kubectl get po
+   19  docker pull registry.demo.opsta.co.th/training10/bookinfo/ratings:prd
+   20  docker rmi registry.demo.opsta.co.th/training10/bookinfo/ratings:prd
+   21  docker rmi registry.demo.opsta.co.th/training10/bookinfo/ratings:prod
+   22  clear
+   23  docker pull registry.demo.opsta.co.th/training10/bookinfo/ratings:prd
+   24  clear
+   25  cls
+   26  kubectl get po
+   27  kubectl inspact bookinfo-prd-ratings-6bc6b46685-t9vkl
+   28  kubectl describe bookinfo-prd-ratings-6bc6b46685-t9vkl
+   29  ls
+   30  cls
+   31  clear
+   32  kubectl get po
+   33  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   34  helm uninstall bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   35  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   36  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml -f
+   37  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   38  helm list
+   39  kubectl get po
+   40  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json
+   41  helm upgrade bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   42  kubectl get po
+   43  cls
+   44  clear
+   45  kubectl get secret
+   46  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json   --type=kubernetes.io/dockerconfigjson
+   47  kubectl describe secret registry-bookinfo
+   48  ls
+   49  kubectl get po
+   50  kubectl describe po bookinfo-prd-ratings-6bc6b46685-t9vkl
+   51  docker login registry.demo.opsta.co.th
+   52  kubectl describe po bookinfo-prd-ratings-6bc6b46685-t9vkl
+   53  kubectl get po
+   54  docker login registry.demo.opsta.co.th
+   55  cat ~/.docker/config.json
+   56  kubectl get secret
+   57  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json   --type=kubernetes.io/dockerconfigjson
+   58  kubectl delete secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json   --type=kubernetes.io/dockerconfigjson
+   59  kubectl apply secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json   --type=kubernetes.io/dockerconfigjson
+   60  kubectl get secret
+   61  kubectl get po
+   62  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   63  helm delete bookinfo-prd-ratings k8s/helm  k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   64  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   65  clear
+   66  helm upgrade bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   67  helm create bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   68  helm list
+   69  kubectl get po
+   70  ls
+   71  cd ..
+   72  mv ratings-prod/ ratings-prd
+   73  cd ratings-prd/
+   74  ls
+   75  helm create bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   76  helm create bookinfo-prd-ratings k8s/helm -fk8s/helm-values/values-bookinfo-prd-ratings.yaml
+   77  helm create bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   78  helm install bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   79  helm list
+   80  kubectl get po
+   81  kubectl get secret
+   82  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json  --type=kubernetes.io/dockerconfigjson
+   83  kubectl get po
+   84  kubectl describe po bookinfo-prd-ratings-6bc6b46685-jx9ds
+   85  kubectl get secret
+   86  helm delete  bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   87  helm delete bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   88  helm list
+   89  helm delete bookinfo-prd-ratings
+   90  helm list
+   91  helm install  bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+   92  kubectl get po
+   93  kubectl describe pod bookinfo-prd-ratings-6bc6b46685-ml6q6 
+   94  kubectl edit pod bookinfo-prd-ratings-6bc6b46685-ml6q6 
+   95  kubectl get secrets -o yaml
+   96  kubectl get secrets -o yaml registry-bookinfo 
+   97  echo 'ewoJImF1dGhzIjogewoJCSJyZWdpc3RyeS5kZW1vLm9wc3RhLmNvLnRoIjogewoJCQkiYXV0aCI6ICJZbTl2YTJsdVptODZUM0J6ZEdGVWFHRnBiR0Z1WkE9PSIKCQl9Cgl9LAoJIkh0dHBIZWFkZXJzIjogewoJCSJVc2VyLUFnZW50IjogIkRvY2tlci1DbGllbnQvMTkuMDMuMTMgKGxpbnV4KSIKCX0sCgkiY3JlZEhlbHBlcnMiOiB7CgkJImFzaWEuZ2NyLmlvIjogImdjbG91ZCIsCgkJImV1Lmdjci5pbyI6ICJnY2xvdWQiLAoJCSJnY3IuaW8iOiAiZ2Nsb3VkIiwKCQkibWFya2V0cGxhY2UuZ2NyLmlvIjogImdjbG91ZCIsCgkJInN0YWdpbmctazhzLmdjci5pbyI6ICJnY2xvdWQiLAoJCSJ1cy5nY3IuaW8iOiAiZ2Nsb3VkIgoJfQp9" | base64 --d
+   98  echo 'ewoJImF1dGhzIjogewoJCSJyZWdpc3RyeS5kZW1vLm9wc3RhLmNvLnRoIjogewoJCQkiYXV0aCI6ICJZbTl2YTJsdVptODZUM0J6ZEdGVWFHRnBiR0Z1WkE9PSIKCQl9Cgl9LAoJIkh0dHBIZWFkZXJzIjogewoJCSJVc2VyLUFnZW50IjogIkRvY2tlci1DbGllbnQvMTkuMDMuMTMgKGxpbnV4KSIKCX0sCgkiY3JlZEhlbHBlcnMiOiB7CgkJImFzaWEuZ2NyLmlvIjogImdjbG91ZCIsCgkJImV1Lmdjci5pbyI6ICJnY2xvdWQiLAoJCSJnY3IuaW8iOiAiZ2Nsb3VkIiwKCQkibWFya2V0cGxhY2UuZ2NyLmlvIjogImdjbG91ZCIsCgkJInN0YWdpbmctazhzLmdjci5pbyI6ICJnY2xvdWQiLAoJCSJ1cy5nY3IuaW8iOiAiZ2Nsb3VkIgoJfQp9' | base64 -d
+   99  helm delete bookinfo-prd-ratings
+  100  kubectl getg pod
+  101  kubectl get pod
+  102  helm install  bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml 
+  103  kubectl get pod
+  104  kubectl edit pod bookinfo-prd-ratings-6bc6b46685-rx8h4 
+  105  kubectl get secrets -o yaml registry-bookinfo 
+  106  kubectl delete secret registry-bookinfo
+  107  kubectl create secret generic registry-bookinfo   --from-file=.dockerconfigjson=$HOME/.docker/config.json  --type=kubernetes.io/dockerconfigjson
+  108  kubectl get secrets -o yaml registry-bookinfo 
+  109  helm delete bookinfo-prd-ratings
+  110  helm install  bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml 
+  111  kubectl get pod
+  112  cls
+  113  ls
+  114  kubectl get svc
+  115  kubectl get ns
+  116  kubectl get deploy -o wide
+  117  helm install  bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml 
+  118  kubectl get svc
+  119  clear
+  120  mkdir -p ~/infra/deploy-keys/
+  121  ssh-keygen -f ~/infra/deploy-keys/id_rsa -N ""
+  122  cat ~/infra/deploy-keys/id_rsa
+  123  cat ~/infra/deploy-keys/id_rsa.pub
+  124  ls
+  125  cd ratings-prd/
+  126  ls
+  127  cat ratings-ingress.yaml 
+  128  cd ..
+  129  ls
+  130  cd ratings
+  131  ls
+  132  cat ratings-ingress.yaml 
+  133  cd ..
+  134  ls
+  135  cd rating
+  136  ls
+  137  cd ratings
+  138  ls
+  139  git status
+  140  git add Jenkinsfile k8s/helm-values/ k8s/helm/
+  141  git status
+  142  git brach
+  143  git branch
+  144  git commit -m "add jenkins file"
+  145  git push
+  146  cls
+  147  clear
+  148  helm install mongodb bitnami/mongodb
+  149  git status
+  150  cd ..
+  151  git status
+  152  git add Jenkinsfile k8s/ratings-deployment.yaml 
+  153  git add k8s/ratings-ingress.yaml k8s/ratings-service.yaml
+  154  git status
+  155  git commit -m "jenkins file"
+  156  git push
+  157  git branch
+  158  clear
+  159  git status
+  160  git add Jenkinsfile 
+  161  git commit -m "modify [x] to 10"
+  162  git push
+  163  ls
+  164  clear
+  165  ls
+  166  cd rating
+  167  ;s
+  168  ls
+  169  cd ratings
+  170  ls
+  171  pwd
+  172  cd ..
+  173  ls
+  174  cd ratings-prd/
+  175  cls
+  176  kubectl create configmap bookinfo-dev-ratings-mongodb-initdb   --from-file=databases/ratings_data.json   --from-file=databases/script.sh
+  177  kubectl create configmap bookinfo-dev-ratings-mongodb-initdb   --from-file=databases/ratings_data.json   --from-file=databases/script.sh
+  178  kubectl create configmap bookinfo-prod-ratings-mongodb-initdb   --from-file=databases/ratings_data.json   --from-file=databases/script.sh
+  179  clear
+  180  kubectl get configmap
+  181  helm list
+  182  kubectl get po
+  183  kubectl get service
+  184  ls
+  185  clear
+  186  ls
+  187  helm
+  188  helm lisy
+  189  helm list
+  190  helm upgrade bookinfo-dev-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+  191  helm upgrade bookinfo-prd-ratings k8s/helm -f k8s/helm-values/values-bookinfo-prd-ratings.yaml
+  192  helm list
+  193  kubectl get po
+  194  cd ..
+  195  cd ratings
+  196  ls
+  197  git status
+  198  git add k8s/helm-values/values-bookinfo-prd-ratings-mongodb.yaml k8s/helm-values/values-bookinfo-prd-ratings.yaml k8s/helm-values/values-bookinfo-uat-ratings-mongodb.yaml k8s/helm-values/values-bookinfo-uat-ratings.yaml
+  199  git status
+  200  git commit -m "add commit"
+  201  git push
+  202  git status
+  203  git add Jenkinsfile.prd Jenkinsfile.tagging
+  204  git status
+  205  git commit -m "add Jenkinsfile.tagging"
+  206  git push
+  207  git branch
+  208  git status
+  209  git add Jenkinsfile.prd
+  210  git commit -m "Jenkinsfile.prd"
+  211  git push
+  212  git status
+  213  git add src/ratings.js
+  214  git status
+  215  git commit -m "modify ratings.js"
+  216  git push
+  217  kubectl get po -n training-bookinfo-dev
+  218  kubectl get po -n training10-bookinfo-dev
+  219  helm list
+  220  helm list -a
+  221  helm list -n training10-bookinfo-dev
+  222  kubectl get po -n training10-bookinfo-dev
+  223  kubectl get deploy -n training10-bookinfo-dev
+  224  kubectl delete pod bookinfo-dev-ratings-5dd9b95b7b-7cjmm  -n training10-bookinfo-dev
+  225  kubectl get po -n training10-bookinfo-dev
+  226  cls
+  227  git status
+  228  git add src/ratings.js
+  229  git status
+  230  git commit -m "rating 3"
+  231  git push
+  232  git status
+  233  git add k8s/helm-values/values-bookinfo-dev-ratings.yaml k8s/helm-values/values-bookinfo-prd-ratings.yaml 
+  234  git commit -m "add var changeme"
+  235  git push
+  236  git status
+  237  git add src/ratings.js 
+  238  git status
+  239  git commit -m "rating 4"
+  240  git push
+  241  kubectl get pod bookinfo-dev-ratings-5dd9b95b7b-7cjmm  -n training10-bookinfo-dev
+  242  kubectl get pod  -n training10-bookinfo-dev
+  243  kubectl describe po bookinfo-dev-ratings-5dd9b95b7b-h44rd  -n training10-bookinfo-dev
+  244  cd ..
+  245  ls
+  246  cd training10/
+  247  ls
+  248  mkdir details
+  249  cd details/
+  250  ls
+  251  mkdir src
+  252  ls
+  253  cd src/
+  254  sl
+  255  ll
+  256  ls
+  257  cd ..
+  258  ls
+  259  clear
+  260  ls
+  261  docker build -t app .
+  262  docker run -it --rm  apptest app
+  263  cls
+  264  clear
+  265  ls
+  266  docker-compose up
+  267  clear
+  268  git status
+  269  ls
+  270  pwd
+  271  git init 
+  272  git add .
+  273  git status
+  274  git config --global user.name "training10"
+  275  git config --global user.email "training10@opsta.in.th"
+  276  git remote add origin git@git.demo.opsta.co.th:adb/training10/details.git
+  277  git commit -m "Initial commit"
+  278  git push -u origin master
+  279  git status
+  280  git branch dev
+  281  git status
+  282  git branch
+  283  git checkout dev
+  284  ls
+  285  docker ps
+  286  ls
+  287  docker build -t registry.demo.opsta.co.th/training10/bookinfo/details:dev
+  288  docker build -t registry.demo.opsta.co.th/training10/bookinfo/details:dev .
+  289  docker run -it --rm -8080:8080 registry.demo.opsta.co.th/training10/bookinfo/details:dev
+  290  docker run -it --rm -p 8080:8080 registry.demo.opsta.co.th/training10/bookinfo/details:dev
+  291  ls
+  292  docker push registry.demo.opsta.co.th/training10/bookinfo/details:dev
+  293  clear
+  294  ls
+  295  history
+  296  cd ..
+  297  cd details/
+  298  ls
+  299  helm upgrade -i bookinfo-dev-details k8s/helm -f k8s/helm-values/values-bookinfo-dev-details.yaml
+  300  helm list
+  301  helm delete bookinfo-dev-details
+  302  ls
+  303  clear
+  304  kubectl config set-context $(kubectl config current-context) --namespace=training10-bookinfo-dev
+  305  kubectl get po
+  306  clear
+  307  kubectl get po
+  308  helm upgrade -i bookinfo-dev-details k8s/helm -f k8s/helm-values/values-bookinfo-dev-details.yaml
+  309  git status
+  310  git add k8s/
+  311  git commit -m "k8s"
+  312  git push
+  313  git status
+  314  git push orign dev
+  315  git branch
+  316  git status
+  317  git pull
+  318  git push origin dev
+  319  git status
+  320  ls
+  321  git status
+  322  git add Jenkinsfile Jenkinsfile.prd Jenkinsfile.tagging 
+  323  git status
+  324  git commit -m "add Jenkinsfile"
+  325  git push
+  326  git origin push dev
+  327  git push dev
+  328  git branch
+  329  git push
+  330  git status
+  331  git pull
+  332  git remote origin https://git.demo.opsta.co.th/adb/training10/details.git
+  333  git remote add origin https://git.demo.opsta.co.th/adb/training10/details.git
+  334  git push origin dev
+  335  git status
+  336  git add k8s/helm-values/values-bookinfo-prd-details.yml k8s/helm-values/values-bookinfo-uat-details.yml
+  337  git commit -m "add uat prd"
+  338  git push
+  339  git push origin dev
+  340  cd ..
+  341  ls
+  342  cd ratings
+  343  ls
+  344  git status
+  345  git add k8s/helm/templates/ratings-deployment.yaml
+  346  git status
+  347  git push
+  348  git commit -m "add loop helm "
+  349  git push
+  350  ls
+  351  git status
+  352  git add k8s/helm-values/values-bookinfo-prd-details.yaml k8s/helm-values/values-bookinfo-uat-details.yaml
+  353  git status
+  354  git commit -m "rename yml to yaml"
+  355  git push
+  356  git push orign dev
+  357  git push origin dev
+  358  ls
+  359  clear
+  360  kubectl config set-context $(kubectl config current-context) --namespace=training10-bookinfo-uat
+  361  helm install bookinfo-dev-details k8s/helm -f k8s/helm-values/values-bookinfo-uat-details.yaml
+  362  kubectl config set-context $(kubectl config current-context) --namespace=training10-bookinfo-prd
+  363  helm install bookinfo-prd-details k8s/helm -f k8s/helm-values/values-bookinfo-prd-details.yaml
+  364  kubectl config set-context $(kubectl config current-context) --namespace=training10-bookinfo-uat
+  365  helm list
+  366  helm delete bookinfo-dev-details
+  367  helm install bookinfo-uat-details k8s/helm -f k8s/helm-values/values-bookinfo-uat-details.yaml
+  368  แสห
+  369  cls
+  370  ls
+  371  kubectl get po
+  372  ls
+  373  rm -rf ratings-prd/
+  374  rm -rf ratings-uat/
+  375  cd infra/
+  376  ls
+  377  cd deploy-keys/
+  378  ;s
+  379  sl
+  380  ls
+  381  cd ..
+  382  ls
+  383  rm -rf rating2
+  384  ls
+  385  cls
+  386  clear
+  387  cd ratings
+  388  curl -s https://raw.githubusercontent.com/opsta/gitops-workshop/master/scripts/cloud-shell-prepare.sh | bash
+  389  exit
+  390  cd ratings/
+  391  ls
+  392  clear
+  393  sh <(curl https://slscan.sh)
+  394  sudo rm -rf ~/ratings/reports
+  395  ls
+  396  docker run   --interactive --tty --rm   --volume "$PWD":/code   --volume /var/run/docker.sock:/var/run/docker.sock   registry.gitlab.com/gitlab-org/security-products/sast:${VERSION:-latest} /app/bin/run /code
+  397  ls
+  398  sudo rm gl-sast-report.json
+  399  cls
+  400  docker run -v $(pwd)/src:/src opensecurity/njsscan /src
+  401  docker run --rm -v "$PWD:/usr/src"   -e SONAR_HOST_URL="https://sonarqube.demo.opsta.co.th"   sonarsource/sonar-scanner-cli:4.5   -D sonar.projectKey=$USER-bookinfo-ratings   -D sonar.projectName=$USER-bookinfo-ratings   -D sonar.sources=./src   -D sonar.login=bookinfo   -D sonar.password=CHANGEME
+  402  docker run --rm -v "$PWD:/usr/src"   -e SONAR_HOST_URL="https://sonarqube.demo.opsta.co.th"   sonarsource/sonar-scanner-cli:4.5   -D sonar.projectKey=$USER-bookinfo-ratings   -D sonar.projectName=$USER-bookinfo-ratings   -D sonar.sources=./src   -D sonar.login=bookinfo   -D sonar.password=OpstaThailand
+  403  helm
+  404  LS
+  405  ls
+  406  sudo rm -rf .scannerwork
+  407  ls
+  408  clear
+  409  git status
+  410  git add Jenkinsfile 
+  411  git status
+  412  git commit -m "add sonaqube in jenkinsfile"
+  413  git push
+  414  git diff
+  415  git status
+  416  git add src/ratings.js 
+  417  git commit -m "fix security"
+  418  git pushs
+  419  git push
+  420  git diff
+  421  git status
+  422  git add src/ratings.js 
+  423  git commit -m "fix smell code"
+  424  git push
+  425  git status
+  426  git add J
+  427  git add Jenkinsfile 
+  428  git commit -m "add OWSP dep"
+  429  git push
+  430  git status
+  431  git add docker-compose.yml k8s/helm-values/values-bookinfo-dev-ratings.yaml k8s/helm-values/values-bookinfo-uat-ratings.yaml k8s/helm-values/values-bookinfo-prd-ratings.yaml src/package.json src/ratings.js 
+  432  git commit -m "fix secury owsp upgrade mongo version to 3.6.3"
+  433  git push
+  434  curl -s https://raw.githubusercontent.com/opsta/gitops-workshop/master/scripts/cloud-shell-prepare.sh | bash
+  435  cls
+  436  exit
+  437  cls
+  438  clear
+  439  grype db update
+  440  grype registry.demo.opsta.co.th/training10/bookinfo/ratings:dev
+  441  clear
+  442  syft registry.demo.opsta.co.th/training10/bookinfo/ratings:dev
+  443  cd ratings/
+  444  ls
+  445  docker-compose up
+  446  git status
+  447  git add Dockerfile Jenkinsfile 
+  448  git commit -m "add jenkins file"
+  449  git push
+  450  git status
+  451  git add Dockerfile 
+  452  git commit -m "fix anchore"
+  453  git push
+  454  helm template -f k8s/helm-values/values-bookinfo-dev-ratings.yaml bookinfo-dev-ratings k8s/helm | docker run -i --rm kubesec/kubesec:4423063 scan /dev/stdin
+  455  helm template -f k8s/helm-values/values-bookinfo-dev-ratings.yaml bookinfo-dev-ratings k8s/helm | docker run -i --rm -v $(pwd)/result:/result alcide/skan:v0.9.0 manifest --outputfile /result/skan-result.html -f -
+  456  git status
+  457  git add Jenkinsfile 
+  458  git commit -m "add sKan"
+  459  git push
+  460  curl https://bookinfo.dev.opsta.co.th/training10/ratings/health
+  461  git statys
+  462  git status
+  463  git add Jenkinsfile 
+  464  git commit -m
+  465  git status
+  466  git add Jenkinsfile 
+  467  git commit -m "uat test"
+  468  git push
+  469  curl https://bookinfo.dev.opsta.co.th/training10/ratings/healthx
+  470  curl https://bookinfo.dev.opsta.co.th/training10/ratings/health
+  471  curl https://bookinfo.dev.opsta.co.txh/training10/ratings/health
+  472  git status
+  473  git add Jenkinsfile 
+  474  git commit -m "try err"
+  475  git psuh
+  476  git push
+  477  git status
+  478  git add Jenkinsfile 
+  479  git commit -m "uncomment anch"
+  480  git push
+  481  git status
+  482  git add Jenkinsfile 
+  483  git commit -m "Accpt Test"
+  484  git push
+  485  cd ..
+  486  git staus
+  487  status
+  488  cd details/
+  489  ls
+  490  git status
+  491  git add Jenkinsfile
+  492  git status
+  493  git commit -m "add sec stage"
+  494  git push
+  495  git push origin dev
+  496  git status
+  497  git add Jenkinsfile 
+  498  git commit -m "renew env rating to details"
+  499  git push
+  500  git push origin dev
+  501  ls
+  502  clear
+  503  ls
+  504  cd infra/
+  505  ls
+  506  cd deploy-keys/
+  507  ls
+  508  cd ..
+  509  ls
+  510  cd ..
+  511  ls
+  512  cd k8s/
+  513  ls
+  514  cd ..
+  515  cd details/
+  516  s
+  517  ls
+  518  cd ..
+  519  ll
+  520  history
+  521  cd details/
+  522  history
+  523  cd ..
+  524  history > history_for_print.txt
